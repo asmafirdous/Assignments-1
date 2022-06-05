@@ -1,0 +1,20 @@
+Determine based on sepal length ,sepal width,petal width and pedal length flower species name.
+
+Use this data to setermine.
+1.Segregate features and classes.
+2.Split the data into train and test.
+3.Train the RandomForestClassifier and LogisticRegression
+4.Compare the accuracy of each model.
+5.Show by running inference for features to determine a flower species.
+
+Steps and Understanding:
+1.Find the problem - Predic the flower based on features
+2.Collection Dataset  - (Data contains features sepal length,sepal width,petal lenght and petal width and classes - flower name)
+3.Choose the library - Pandas(to load the csv file) and Numpy(to perform math)
+4.Segregating x and y (input and output) using the function (.ilac)
+5.Splitting data for train and test (train 75% and test 25%)
+6.Feature scaling, if its the features input values are of different targets
+7.Algorithm (classification and Regression)
+8.Training (Train for preprocessed data ) 
+9.Validation (For Accuracy)
+10.Prediction :How it predicts for new data 
