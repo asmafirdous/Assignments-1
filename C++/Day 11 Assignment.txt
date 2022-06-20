@@ -1,0 +1,46 @@
+1D array:
+INT:
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[3], i, j;
+    cout <<"Enter elements of 1D array " << endl;
+
+    // Elements an array
+    for(i = 0; i < 3; ++i)
+       {
+           cout << "Enter the element";
+           cin >> a[i];
+       }
+    for(i = 0; i < 3; ++i)
+       {
+           cout << a[i]<<"\t" ;
+       }
+            return 0;
+}
+ 
+CHAR:
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char a[3], i, j;
+    cout <<"Enter elements of 1D array " << endl;
+
+    // Elements an array
+    for(i = 0; i < 3; ++i)
+       {
+           cout << "Enter the element";
+           cin >> a[i];
+       }
+    for(i = 0; i < 3; ++i)
+       {
+           cout << a[i]<<"\t" ;
+       }
+            return 0;
+}
