@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+int a[]={3,2,4,5};
+int N=sizeof(a)/sizeof(a[1]);
+cout<<"Size of the array :"<<N<<endl;
+int SUM=0;
+int Total= (N+1) * (N + 2) / 2;
+for(int i=0;i<N;i++)
+{
+SUM=SUM+a[i];
+}
+int MissingValue=Total-SUM;
+cout<<"SUM of the numbers is :" <<SUM<<"\n"<<"The total is : "<<Total<<endl;
+cout<<"The MissingValue is :"<<MissingValue<<endl;
+return 0;
+}
