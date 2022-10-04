@@ -1,0 +1,58 @@
+QUick SOrt : 
+
+1) Select one element and consider as pivot ( either at first or at end )
+2) Put the pivot element at the correct position 
+3) Divide and concur 
+4)quick sort is also called as  partition-exchange sort.
+5) repeat the same process of selecing pivot and assign it to correct position for the elements at left and then at right 
+(Picking the element and putting it in the correct position ) 
+
+[]pick a pivot value  at the end 
+[]pick the j as first element (j=0)
+[]pick i as -1 (index i=-1)
+compare the pivot number with the element at j index . if its smaller than pivot . swap the j position with i by incrementing it one. 
+
+
+#include<iostream>    
+using namespace std;   
+int partition(int a[],int start,int end)
+{
+    int pivot=a[end];
+    int i=start-1;
+    for(int j=start;j<end;j++)
+    {
+        if(a[j]<pivot)
+        {
+            i++;
+            int temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+        }
+    }
+    i++;
+    a[end]=a[i];
+    a[i]=pivot;
+    return i;
+}
+
+void qs(int a[],int start,int end)
+{
+    if(start>end)
+    return;
+    int k=partition(a,start,end);
+    qs(a,start,k-1);
+    qs(a,k+1,end);
+}
+
+int main()    
+{
+    int a[]={3,7,19,2,6,5};
+    int n=sizeof(a)/sizeof(a[1]);
+    qs(a,0,n-1);
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<"\t";
+    }
+    return 0;
+}  
+
