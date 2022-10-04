@@ -1,0 +1,43 @@
+Selection Sort 
+
+1)Find a smaller number 
+2)Put that in the first position 
+3) Repeating the process to find and assign by increasing i++
+
+
+CODE:
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[]={1,5,7,3,9,1};
+    int n=sizeof(a)/sizeof(a[1]);
+    int temp;
+    cout<<"The given array is :"<<endl;
+    for(int i=0;i<n;i++)
+    {
+    cout<<a[i]<<"\t";
+    }
+    for(int i=0;i<n;i++)
+    {
+        int min=i;
+    for(int j=i+1;j<n;j++)
+    {
+        if(a[j]<a[min])
+        min=j;
+       temp= a[min];
+        a[min]=a[i];
+        a[i]=temp;
+    }
+    }
+        cout<<endl;
+    cout<<"The sorted array is : "<<endl;
+    for(int i=0;i<n;i++)
+    {
+    cout<<a[i];
+    }
+   return 0;
+}
+
