@@ -1,0 +1,78 @@
+Dijkstra's Algorithm or shortest path algorithm
+
+Definition:
+Dijkstra's algorithm is also known as the shortest path algorithm. It is an algorithm used to find the shortest path between nodes of the graph.
+The algorithm creates the tree of the shortest paths from the starting source vertex from all other points in the graph
+
+
+i)Dijkstra's algorithm only works with the graph that possesses positive weights.
+ii)If there is negative weight in the graph, then the algorithm will fail to work.
+
+Pseudocode:
+i)Initialization of all nodes with distance "infinite"; initialization of the starting node with 0
+ii)Marking of the distance of the starting node as permanent, all other distances as temporarily.
+iii)Setting of starting node as active.
+iv)Calculation of the temporary distances of all neighbour nodes of the active node by summing up its distance with the weights of the edges.
+v)If such a calculated distance of a node is smaller as the current one, update the distance and set the current node as antecessor. 
+This step is also called update and is Dijkstra's central idea.
+vi)Setting of the node with the minimal temporary distance as active. Mark its distance as permanent.v
+vII)Repeating of steps 4 to 7 until there aren't any nodes left with a permanent distance, which neighbours still have temporary distances.
+
+CODE:
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+#define INFINITY 9999
+#define max 5
+void dijkstra(int G[max][max],int n,int startnode);
+int main() {
+   int G[max][max]={{0,1,0,3,10},{1,0,5,0,0},{0,5,0,2,1},{3,0,2,0,6},{10,0,1,6,0}};
+   int n=5;
+   int u=0;
+   dijkstra(G,n,u);
+   return 0;
+}
+void dijkstra(int G[max][max],int n,int startnode) {
+   int cost[max][max],distance[max],pred[max];
+   int visited[max],count,mindistance,nextnode,i,j;
+   for(i=0;i<n;i++)
+      for(j=0;j<n;j++)
+   if(G[i][j]==0)
+      cost[i][j]=INFINITY;
+   else
+      cost[i][j]=G[i][j];
+   for(i=0;i<n;i++) {
+      distance[i]=cost[startnode][i];
+      pred[i]=startnode;
+      visited[i]=0;
+   }
+   distance[startnode]=0;
+   visited[startnode]=1;
+   count=1;
+   while(count<n-1) {
+      mindistance=INFINITY;
+      for(i=0;i<n;i++)
+         if(distance[i]<mindistance&&!visited[i]) {
+         mindistance=distance[i];
+         nextnode=i;
+      }
+      visited[nextnode]=1;
+      for(i=0;i<n;i++)
+         if(!visited[i])
+      if(mindistance+cost[nextnode][i]<distance[i]) {
+         distance[i]=mindistance+cost[nextnode][i];
+         pred[i]=nextnode;
+      }
+      count++;
+   }
+   for(i=0;i<n;i++)
+   if(i!=startnode) {
+      cout<<"\nDistance of node"<<i<<"="<<distance[i];
+      cout<<"\nPath="<<i;
+      j=i;
+      do {
+         j=pred[j];
+         cout<<"<-"<<j;
+      }while(j!=startnode);
+   }
+}
