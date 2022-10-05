@@ -1,0 +1,74 @@
+PRIMS ALGORITHM:
+DEFINITION:
+Prim’s algorithm is also a Greedy algorithm. Prim’s algorithm always starts with a single node and it moves through
+ several adjacent nodes, in order to explore all of the connected edges along the way.
+i) a spanning tree means all vertices must be connected.
+they must be connected with the minimum weight edge to make it a Minimum Spanning Tree.
+
+
+
+CODE:
+#include <bits/stdc++.h>
+using namespace std;
+#define V 5
+int minKey(int key[], bool mstSet[])
+{
+	int min = INT_MAX, min_index;
+	for (int v = 0; v < V; v++)
+		if (mstSet[v] == false && key[v] < min)
+			min = key[v], min_index = v;
+	return min_index;
+}
+
+void printMST(int P[], int G[V][V])
+{
+	cout << "Edge \tWeight\n";
+	for (int i = 1; i < V; i++)
+		cout << P[i] << " - " << i << " \t"
+			<< G[i][P[i]] << " \n";
+}
+
+void primMST(int G[V][V])
+{
+	int P[V];
+	int key[V];
+	bool mstSet[V];
+	for (int i = 0; i < V; i++)
+		key[i] = INT_MAX, mstSet[i] = false;
+	key[0] = 0;
+	P[0] = -1; // First node is always root of MST
+
+	for (int count = 0; count < V - 1; count++) {
+		int u = minKey(key, mstSet);
+		mstSet[u] = true;
+		for (int v = 0; v < V; v++)
+			if (G[u][v] && mstSet[v] == false
+				&& G[u][v] < key[v])
+				P[v] = u, key[v] = G[u][v];
+	}
+
+	printMST(P, G);
+}
+
+int main()
+{
+	/* Let us create the following Graph
+		2 3
+	(0)--(1)--(2)
+	| / \ |
+	6| 8/ \5 |7
+	| / \ |
+	(3)-------(4)
+			9	 */
+	int G[V][V] = { { 0, 2, 0, 6, 0 },
+						{ 2, 0, 3, 8, 5 },
+						{ 0, 3, 0, 0, 7 },
+						{ 6, 8, 0, 0, 9 },
+						{ 0, 5, 7, 9, 0 } };
+
+	// Print the solution
+	primMST(G);
+
+	return 0;
+}
+
