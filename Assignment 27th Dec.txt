@@ -1,0 +1,64 @@
+Write short notes on
+
+Recurrent Neural Networks
+1)A recurrent neural network (RNN) is a type of artificial neural network which uses sequential data or time series data.
+2)It is commonly used for ordinal or temporal problems, such as language translation, natural language processing (nlp), speech recognition, and image captioning.
+3)While traditional deep neural networks assume that inputs and outputs are independent of each other, the output of recurrent neural networks depend on the prior elements within the sequence.
+
+Why to use RNNs?
+Recurrent neural networks recognize data's sequential characteristics and use patterns to predict the next likely scenario.
+
+Understanding RNNs
+1)What’s sequential data — it is data where the order matters.
+2)RNN works on the principle of saving the output of a particular layer and feeding this back to the input in order to predict the output of the layer. 
+3)The nodes in different layers of the neural network are compressed to form a single layer of recurrent neural networks
+
+Training an RNN model
+To train a recurrent neural network, you use an application of back-propagation called back-propagation through time. 
+The gradient values will exponentially shrink as it propagates through each time step.
+Te gradient is used to make adjustments in the neural networks weights thus allowing it to learn.
+
+MySQL
+
+Abbreviation: SQL -SQL is a standard language for accessing and manipulating databases.
+
+a. Introduction to SQL
+SQL stands for Structured Query Language
+SQL lets you access and manipulate databases
+SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
+
+b. Why MySQL?
+MySQL is a database management system.
+It may be anything from a simple shopping list to a picture gallery or the vast amounts of information in a corporate network.
+To add, access, and process data stored in a computer database, you need a database management system such as MySQL Server.
+
+
+c. Installation
+The process for installing MySQL from a ZIP Archive package is as follows:
+Extract the main archive to the desired install directory. ...
+Create an option file.
+Choose a MySQL server type.
+Initialize MySQL.
+Start the MySQL server.
+Secure the default user accounts.
+Installation done my local machine 
+
+d. Creating Databases, Tables & Constraints
+
+Database: 
+CREATE DATABASE databasename;
+SHOW databases;
+use database_name;
+
+TABLES : 
+CREATE TABLE tablename;
+create table employee
+(
+Employeeid int;
+Firstname varchar(255),
+Secondname varchar(255),
+Address varchar(255),
+Designation varchar(255)
+);
+
+FETCH: SELECT * FROM tablename;

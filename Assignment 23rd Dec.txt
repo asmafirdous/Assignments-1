@@ -1,0 +1,45 @@
+Assignment:
+Make Short Notes on ImageNet, AlexNet, VGGNet, ResNet, Inception
+
+Notes: 
+Define ImageNet?
+ImageNet is an image database organized according to the WordNet hierarchy (currently only the nouns), 
+in which each node of the hierarchy is depicted by hundreds and thousands of images.
+The project has been instrumental in advancing computer vision and deep learning research.
+
+ImageNet model?
+ImageNet is a project which aims to provide a large image database for research purposes. 
+It contains more than 14 million images which belong to more than 20,000 classes ( or synsets ).
+They also provide bounding box annotations for around 1 million images, which can be used in Object Localization tasks.
+
+Define AlexNet?
+AlexNet is a convolutional neural network that is 8 layers deep.
+You can load a pretrained version of the network trained on more than a million images from the ImageNet database [1]. 
+The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals.
+
+What is AlexNet architecture in CNN?
+AlexNet architecture consists of 5 convolutional layers, 3 max-pooling layers, 2 normalization layers, 2 fully connected layers,
+and 1 softmax layer. 2. Each convolutional layer consists of convolutional filters and a nonlinear activation function ReLU. 
+The pooling layers are used to perform max pooling.
+
+Define VGGNet?
+VGG stands for Visual Geometry Group; it is a standard deep Convolutional Neural Network (CNN) architecture with multiple layers. 
+The “deep” refers to the number of layers with VGG-16 or VGG-19 consisting of 16 and 19 convolutional layers.
+
+Define ResNet?
+Deep residual networks like the popular ResNet-50 model is a convolutional neural network (CNN) that is 50 layers deep.
+
+What is inception in deep learning?
+An inception network is a deep neural network with an architectural design that consists of repeating components referred to
+ as Inception modules. As mentioned earlier, this article focuses on the technical details of the inception module.
+
+What is the main difference between VGG and AlexNet?
+VGG, while based off of AlexNet, has several differences that separates it from other competing models: 
+Instead of using large receptive fields like AlexNet (11x11 with a stride of 4), VGG uses very small receptive fields 
+(3x3 with a stride of 1)
+
+
+
+
+
+
