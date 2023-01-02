@@ -1,0 +1,83 @@
+Make short notes on
+
+SQL:
+
+f. INSERT statement
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+g. UPDATE statement
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+h. DELETE / Drop
+SYNTAX: DELETE FROM table_name WHERE condition;
+eg:DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+SYNTAX: DROP TABLE table_name;
+eg:DROP TABLE Shippers;
+
+i. Aggregate Function
+The SQL COUNT(), AVG() and SUM() Functions
+SYNTAX: SELECT COUNT(column_name) FROM table_name WHERE condition;
+
+eg:
+SELECT AVG(column_name)
+FROM table_name
+WHERE condition;
+
+eg:
+SELECT SUM(column_name)
+FROM table_name
+WHERE condition;
+
+j. SQL Joins
+(INNER JOIN,LEFT JOIN,RIGHT JOIN,FULL OUTER JOIN,SELF JOIN  )
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+Eg:
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+
+Recurrent Neural Networks:
+What is meant by recurrent neural networks?
+A recurrent neural network is a type of artificial neural network commonly used in speech recognition and natural language processing.
+Recurrent neural networks recognize data's sequential characteristics and use patterns to predict the next likely scenario.
+
+LSTM & GRU:
+the LSTM ( Long -short-term memory ) and GRU ( Gated Recurrent Unit ) have gates as an internal mechanism, which control what information to keep and what information to throw out. 
+Every LSTM network basically contains three gates to control the flow of information and cells to hold information. The Cell States carries the information from initial to later time steps without getting vanished.
+Gates
+
+Gates make use of sigmoid activation or you can say tanh activation. values ranges in tanh activation are 0 -1.
+
+Forget Gate
+Input Gate
+Output Gate
+
+GRU ( Gated Recurrent Units ) are similar to the LSTM networks. GRU is a kind of newer version of RNN. However, there are some differences between GRU and LSTM.
+
+GRU doesn’t contain a cell state
+GRU uses its hidden states to transport information
+It Contains only 2 gates(Reset and Update Gate)
+GRU is faster than LSTM
+GRU has lesser tensor’s operation that makes it faster
+
+1)Update Gate
+2)Reser Gate
+
+Deep RNN:
+What is a deep RNN?
+A Deep Learning approach for modelling sequential data is Recurrent Neural Networks (RNN).
+RNNs were the standard suggestion for working with sequential data before the advent of attention models.
+Specific parameters for each element of the sequence may be required by a deep feedforward model
+
+
+Bi-directional RNN:
+What are bidirectional RNNs used for?
+Image result for Bi-directional RNN
+A Bidirectional RNN is a combination of two RNNs training the network in opposite directions, one from the beginning to the end 
+of a sequence, and the other, from the end to the beginning of a sequence. It helps in analyzing the future events by not limiting
+the model's learning to past and present.
